@@ -2,7 +2,7 @@ const dummyRestaurants = [];
 
 // Function to fetch restaurant data based on a location (lat, lng)
 async function fetchRestaurants(location) {
-    const apiKey = 'AIzaSyB8HjG5zp7kXrA4oiZq1IXVVo6SNayIG8Y'; // Replace with your actual key
+    const apiKey = 'Your API'; // Replace with your actual key
     const radius = 500; // Search radius in meters (adjust as needed)
     const type = 'restaurant'; // Search for restaurants
     const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location.lat},${location.lng}&radius=${radius}&type=${type}&key=${apiKey}`;
