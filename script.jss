@@ -2,7 +2,7 @@ const dummyRestaurants = [];
 
 // Function to fetch restaurant data based on a location (lat, lng)
 async function fetchRestaurants(location) {
-    const apiKey = '__GOOGLE_MAPS_API_KEY__'; // Use the placeholder
+    const apiKey = __CONFIG__.GOOGLE_MAPS_API_KEY;
     const radius = 500; // Search radius in meters (adjust as needed)
     const type = 'restaurant'; // Search for restaurants
     const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location.lat},${location.lng}&radius=${radius}&type=${type}&key=${apiKey}`;
@@ -225,7 +225,7 @@ document.getElementById('find-places').addEventListener('click', async () => {
 
 // calculateCommuteTimes
 async function calculateCommuteTimes(locations, restaurant) {
-    const apiKey = '__GOOGLE_MAPS_API_KEY__';
+    const apiKey = __CONFIG__.GOOGLE_MAPS_API_KEY;
     const origins = locations.map(loc => `${loc.lat},${loc.lng}`);
     const destination = `${restaurant.geometry.location.lat()},${restaurant.geometry.location.lng()}`;
 
