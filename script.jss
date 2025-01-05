@@ -2,7 +2,7 @@ const dummyRestaurants = [];
 
 // Function to fetch restaurant data based on a location (lat, lng)
 async function fetchRestaurants(location) {
-    const apiKey = 'Your API'; // Replace with your actual key
+    const apiKey = '__GOOGLE_MAPS_API_KEY__'; // Use the placeholder
     const radius = 500; // Search radius in meters (adjust as needed)
     const type = 'restaurant'; // Search for restaurants
     const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location.lat},${location.lng}&radius=${radius}&type=${type}&key=${apiKey}`;
@@ -128,7 +128,7 @@ function createRestaurantCard(restaurant, commuteTimes) {
             <div class="mb-4">
                 <div class="flex items-center mb-2">
                     <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-.181h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                     </svg>
                     <span class="ml-1 text-gray-600">${restaurant.rating} (${restaurant.reviews} reviews)</span>
                 </div>
@@ -225,7 +225,7 @@ document.getElementById('find-places').addEventListener('click', async () => {
 
 // calculateCommuteTimes
 async function calculateCommuteTimes(locations, restaurant) {
-    const apiKey = 'YOUR_GOOGLE_API_KEY';
+    const apiKey = '__GOOGLE_MAPS_API_KEY__';
     const origins = locations.map(loc => `${loc.lat},${loc.lng}`);
     const destination = `${restaurant.geometry.location.lat()},${restaurant.geometry.location.lng()}`;
 
